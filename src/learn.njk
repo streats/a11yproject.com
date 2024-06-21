@@ -1,0 +1,97 @@
+---
+layout: layouts/home.njk
+title: Learn
+subtitle: Accessibility software, books, blogs, online tools, and more.
+colorScheme: green
+hero: resources
+eleventyNavigation:
+  key: Resources
+  parent: Feature
+  order: 4
+tags:
+  - navprimary
+templateClass: template-resources
+---
+
+<div data-content class="l-content c-content--resources">
+
+	{% set resource = resources.featured %}
+	{% for featuredResource in resource %}
+		{% include "featured/resource.njk" %}
+	{% endfor %}
+
+	<h2 id="media" class="c-heading-large">
+		Media
+	</h2>
+
+	{% set resourceType = "Books" %}
+	<h3 id="books" class="c-heading-medium u-spacing-top-long">
+		{{ resourceType }}
+	</h3>
+	<p class="c-preface">
+		Physical and eBooks written to discuss different accessibility topics.
+	</p>
+	<div class="c-card__wrapper">
+		{% set resource = resources.books %}
+		{% for resource in resource %}
+			{% include "card/resource.njk" %}
+		{% endfor %}
+	</div>
+
+	{% set resourceType = "Gaming" %}
+	<h3 id="gaming" class="c-heading-medium u-spacing-top-long">
+		{{ resourceType }}
+	</h3>
+	<p class="c-preface">
+		Resources for computer, console, and mobile gaming.
+	</p>
+	<div class="c-card__wrapper">
+		{% set resource = resources.gaming %}
+		{% for resource in resource %}
+			{% include "card/resource.njk" %}
+		{% endfor %}
+	</div>
+
+	{% set resourceType = "Newsletters" %}
+	<h3 id="newsletters" class="c-heading-medium">
+		{{ resourceType }}
+	</h3>
+	<p class="c-preface">
+		Get the latest accessibility-related news delivered to your inbox.
+	</p>
+	<div class="c-card__wrapper">
+		{% set resource = resources.newsletters %}
+		{% for resource in resource %}
+			{% include "card/resource.njk" %}
+		{% endfor %}
+	</div>
+
+	{% set resourceType = "Podcasts" %}
+	<h3 id="podcasts" class="c-heading-medium">
+		{{ resourceType }}
+	</h3>
+	<p class="c-preface">
+		Listen to, or read the transcripts of people talking all about accessibility.
+	</p>
+	<div class="c-card__wrapper">
+		{% set resource = resources.podcasts %}
+		{% for resource in resource %}
+			{% include "card/resource.njk" %}
+		{% endfor %}
+	</div>
+
+	{% set resourceType = "Talks" %}
+	<h3 id="talks" class="c-heading-medium">
+		{{ resourceType }}
+	</h3>
+	<p class="c-preface">
+		Recorded conference talks.
+	</p>
+	<div class="c-card__wrapper">
+		{% set resource = resources.talks %}
+		{% for resource in resource %}
+			{% include "card/resource.njk" %}
+		{% endfor %}
+	</div>
+
+</div>
